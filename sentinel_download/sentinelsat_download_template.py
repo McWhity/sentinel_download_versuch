@@ -22,8 +22,8 @@ area : area(s) of interest
 api_url: url of Sentinel Scientific Data Hub
 path: path where to store the data
 
-Possible keywords
--------------------------
+Possible keywords of query
+------------------------------------
 inital_date: (e.g.  '20160101'; datetime(2016, 1, 1, 12, 5); date(2016,1,1))
 end_date: (e.g. '20160102'; datetime(2016, 1, 2, 12, 5); date(2016,1,2)) (default setting: end_date=datetime.now())
 platformname: (e.g. 'Sentinel-1'; 'Sentinel-2'; 'Sentinel-1 OR Sentinel-2')
