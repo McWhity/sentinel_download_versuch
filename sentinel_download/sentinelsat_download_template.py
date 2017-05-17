@@ -46,8 +46,8 @@ print(datetime.now())
 api = SentinelAPI('user', 'password', api_url='https://scihub.copernicus.eu/apihub/')
 
 ### Sentinel data search
-products = api.query(area=get_coordinates('/media/tweiss/Work/coordinates_wallerfing.geojson'), initial_date='20151219', end_date=datetime(2015, 12, 24), platformname='Sentinel-1', producttype='GRD')
-# products = api.query(get_area(48.68, 48.70, 12.89 ,12.999), '20151219', datetime(2015, 12, 29), platformname='Sentinel-1')
+# products = api.query(area=get_coordinates('/media/tweiss/Work/coordinates_wallerfing.geojson'), initial_date='20151219', end_date=datetime(2015, 12, 24), platformname='Sentinel-1', producttype='GRD')
+products = api.query(get_area(48.68, 48.70, 12.89 ,12.999), '20151219', datetime(2015, 12, 29), platformname='Sentinel-1')
 print(api._last_query)
 print('%s product results for your query. The products need %s Gb disk space') % (len(products), api.get_products_size(products))
 
@@ -60,7 +60,6 @@ path = '/media/tweiss/Daten'
 result = api.download_all(products, directory_path=path, max_attempts=10, checksum=True, check_existing=True, show_progress=False)
 print('Downloaded files:')
 print(result.viewkeys())
-
 
 
 """
