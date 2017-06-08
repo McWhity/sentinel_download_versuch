@@ -27,8 +27,10 @@ def all_in_one(user, password, area, api_url='https://scihub.copernicus.eu/apihu
 
     ### Sentinel data search
     products = api.query(geojson, initial_date, end_date, **keywords)
+    # products_df = api.to_dataframe(products)
     print(api._last_query)
     print('%s product results for your query. The products need %s Gb disk space') % (len(products), api.get_products_size(products))
+    print([i['title'] for i in products if 'title' in i])
 
     ### download all query products
     if download == 'yes':
@@ -37,6 +39,10 @@ def all_in_one(user, password, area, api_url='https://scihub.copernicus.eu/apihu
         # print(result.viewkeys())
 
         return result
+    # print(products_df.index.values)
+    # return products_df
+    # print([i['title'] for i in products if 'title' in i])
+    return products
 
 
 
