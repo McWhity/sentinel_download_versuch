@@ -18,9 +18,9 @@ needed keywords
 ------------------------
 user : username of Sentinel Scientific Data Hub account (e.g. 'mustermann')
 password : password of Sentinel Scientific Data Hub account (e.g. '12345')
-area : area(s) of interest
-    input with coordinates (e.g. 'latmin, latmax, lonmin, lonmax') or
-    input with file for one or more areas (e.g. 'coordinates.geojson')
+area : area of interest
+    input of coordinates (e.g. 'latmin, latmax, lonmin, lonmax') or
+    input of geojson-file with coordinates of a polygon (e.g. 'coordinates.geojson')
 api_url: url of Sentinel Scientific Data Hub
 path: path where to store the data
 initial_date (date when data was taken): start date of the query (e.g. '20160101'; datetime(2016, 1, 1, 12, 5); date(2016,1,1))
@@ -59,19 +59,19 @@ print(datetime.now())
 # needed keywords
 user = 'user'
 password = 'password'
-area = 'coordinates_wallerfing.geojson'
+area = '../coordinates_test_sites/coordinates_mni.geojson'
 api_url = 'https://scihub.copernicus.eu/apihub/'
-path = '/media/tweiss/Daten'
-initial_date = '20170514'
+path = '/media/nas_data/Thomas/Wallerfing/Sentinel_1_data'
+initial_date = '20170525'
 end_date = datetime.now()
 download = 'yes'
 
 # additional keywords Sentinel 1 and 2
-platformname = '*'
+platformname = 'Sentinel-1'
 filename = '*'
 orbitnumber = '*'
 orbitdirection = '*'
-producttype = '*'
+producttype = 'SLC'
 relativeorbitnumber = '*'
 sensoroperationalmode = '*'
 
